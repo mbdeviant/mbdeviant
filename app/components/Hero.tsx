@@ -11,7 +11,7 @@ export default function Hero() {
         mbdeviant
       </h1>
       <p className="mt-4 text-sm md:text-lg lg:text-xl text-gray-300">
-        at least that&apos;s the name the internet knows me by
+        that&apos;s the name the internet knows me by
       </p>
     </section>
   );
