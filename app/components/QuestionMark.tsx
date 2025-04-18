@@ -23,11 +23,20 @@ const SpinningModel = () => {
       0.1,
       1000
     );
-    camera.position.z = 2.5;
-    camera.position.y = -0.5;
+    camera.position.z = 2;
+    camera.position.y = 0;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(mount.clientWidth, mount.clientHeight);
+    const resizeRenderer = () => {
+      const width = mount.clientWidth;
+      const height = mount.clientHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    };
+
+    window.addEventListener("resize", resizeRenderer);
     mount.appendChild(renderer.domElement);
 
     const hemisphereLight = new THREE.HemisphereLight(0xffa500, 0x800080, 1); // Purple sky, orange ground
@@ -41,7 +50,7 @@ const SpinningModel = () => {
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.rotateSpeed = 0.3;
-    controls.enableZoom = false;
+    controls.enableZoom = true;
 
     // User interaction handling
     controls.addEventListener("start", () => {
@@ -82,6 +91,7 @@ const SpinningModel = () => {
 
     // CLEANUP
     return () => {
+      window.removeEventListener("resize", resizeRenderer);
       if (spinTimeout.current) clearTimeout(spinTimeout.current);
       while (mount.firstChild) {
         mount.removeChild(mount.firstChild);
