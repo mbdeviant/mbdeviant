@@ -15,15 +15,14 @@ const SpinningModel = () => {
     const mount = mountRef.current;
     if (!mount) return;
 
-    // SCENE SETUP
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      95,
+      70,
       mount.clientWidth / mount.clientHeight,
       0.1,
       1000
     );
-    camera.position.z = 2;
+    camera.position.z = 3;
     camera.position.y = 0;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -45,36 +44,30 @@ const SpinningModel = () => {
     const directionalLight = new THREE.DirectionalLight(0x800080, 3);
     scene.add(directionalLight);
 
-    // CONTROLS
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.rotateSpeed = 0.3;
     controls.enableZoom = true;
 
-    // User interaction handling
     controls.addEventListener("start", () => {
       isUserInteracting.current = true;
 
-      // reset spin resume timer if needed
       if (spinTimeout.current) clearTimeout(spinTimeout.current);
     });
 
     controls.addEventListener("end", () => {
-      // wait 2s then resume spin
       spinTimeout.current = setTimeout(() => {
         isUserInteracting.current = false;
       }, 100);
     });
 
-    // LOAD MODEL
     const loader = new GLTFLoader();
     loader.load("/models/question-mark.glb", (gltf) => {
       const model = gltf.scene;
       scene.add(model);
       modelRef.current = model;
 
-      // ANIMATE LOOP
       const animate = () => {
         requestAnimationFrame(animate);
 
@@ -89,7 +82,6 @@ const SpinningModel = () => {
       animate();
     });
 
-    // CLEANUP
     return () => {
       window.removeEventListener("resize", resizeRenderer);
       if (spinTimeout.current) clearTimeout(spinTimeout.current);
