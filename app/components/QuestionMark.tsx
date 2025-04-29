@@ -38,7 +38,7 @@ const SpinningModel = () => {
     window.addEventListener("resize", resizeRenderer);
     mount.appendChild(renderer.domElement);
 
-    const hemisphereLight = new THREE.HemisphereLight(0xffa500, 0x800080, 1); // Purple sky, orange ground
+    const hemisphereLight = new THREE.HemisphereLight(0xffa500, 0x800080, 1);
     scene.add(hemisphereLight);
 
     const directionalLight = new THREE.DirectionalLight(0x800080, 3);
@@ -49,6 +49,7 @@ const SpinningModel = () => {
     controls.dampingFactor = 0.05;
     controls.rotateSpeed = 0.3;
     controls.enableZoom = true;
+    controls.enablePan = false;
 
     controls.addEventListener("start", () => {
       isUserInteracting.current = true;
