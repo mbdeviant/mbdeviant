@@ -60,15 +60,16 @@ export default function Hero() {
         if (rippleStart.current !== null) {
           const rippleTime = (performance.now() - rippleStart.current) / 1000;
 
-          if (rippleTime < 1.2) {
+          const rippleDuration = 2;
+          const progress = rippleTime / rippleDuration;
+
+          if (progress < 1) {
             const distToClick =
               Math.abs(i / numPoints - (mouse.current.x + 1) / 2) * 2;
             const damping = Math.max(0, 1 - distToClick);
-            rippleY =
-              Math.sin(i * 0.5 - rippleTime * 6) *
-              10 *
-              damping *
-              (1 - rippleTime);
+            const fade = Math.pow(1 - progress, 2);
+
+            rippleY = Math.sin(i * 0.5 - rippleTime * 6) * 10 * damping * fade;
           } else {
             rippleStart.current = null;
           }
