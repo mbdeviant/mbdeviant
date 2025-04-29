@@ -138,7 +138,7 @@ export default function Hero() {
       />
       <div className="relative z-10 text-center px-6">
         <h1
-          className="font-bold bg-gradient-to-r cursor-default from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md"
+          className="font-bold bg-gradient-to-r cursor-default select-none from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md"
           style={{
             fontSize: "clamp(3.5rem, 10vw, 8rem)",
           }}
