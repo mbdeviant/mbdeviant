@@ -46,7 +46,7 @@ const SpinningModel = () => {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
+    controls.dampingFactor = 0.07;
     controls.rotateSpeed = 0.3;
     controls.enableZoom = true;
     controls.enablePan = false;
