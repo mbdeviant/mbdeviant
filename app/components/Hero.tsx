@@ -31,24 +31,24 @@ export default function Hero() {
     const waveConfigs = [
       {
         color: 0xff7f50,
-        amplitude: 2,
-        frequency: 0.12,
-        speed: 1.9,
+        amplitude: 1,
+        frequency: 0.15,
+        speed: 2,
         opacity: 0.8,
-        offset: 0,
+        offset: 3,
       },
       {
         color: 0xff1f70,
-        amplitude: 3,
-        frequency: 0.15,
+        amplitude: 1,
+        frequency: 0.11,
         speed: 1.5,
         opacity: 0.5,
         offset: 1,
       },
       {
         color: 0x9f50ff,
-        amplitude: 1,
-        frequency: 0.25,
+        amplitude: 2,
+        frequency: 0.19,
         speed: 2.2,
         opacity: 0.6,
         offset: 2,
@@ -56,7 +56,7 @@ export default function Hero() {
     ];
 
     const numPoints = 150;
-    let waveWidth = window.innerWidth * 0.3;
+    let waveWidth = window.innerWidth * 0.5;
 
     waveConfigs.forEach((config, waveIndex) => {
       const points: THREE.Vector3[] = [];
@@ -75,7 +75,7 @@ export default function Hero() {
       });
 
       const waveLine = new THREE.Line(geometry, material);
-      waveLine.position.z = -waveIndex * 5;
+      waveLine.position.z = -waveIndex * 55;
       scene.add(waveLine);
       waveLines.push(waveLine);
     });
@@ -98,8 +98,8 @@ export default function Hero() {
 
           let rippleY = 0;
           if (rippleStart.current !== null) {
-            const rippleTime = (performance.now() - rippleStart.current) / 2000;
-            const rippleDuration = 1;
+            const rippleTime = (performance.now() - rippleStart.current) / 500;
+            const rippleDuration = 3;
             const progress = rippleTime / rippleDuration;
 
             if (progress < 1) {
@@ -151,7 +151,6 @@ export default function Hero() {
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
 
-      // Update all wave lines
       waveLines.forEach((waveLine) => {
         const geometry = waveLine.geometry;
         const positions = (
@@ -189,21 +188,21 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-center justify-center pointer-events-none relative overflow-hidden">
+    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden">
       <div
         ref={mountRef}
         className="absolute inset-0 z-0 pointer-events-none"
       />
       <div className="relative z-10 text-center px-6">
         <h1
-          className="font-bold bg-gradient-to-r cursor-default select-none from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent drop-shadow-md"
+          className="font-bold bg-gradient-to-r cursor-default select-none from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_30px_rgba(255,100,100)]"
           style={{
             fontSize: "clamp(3.5rem, 10vw, 8rem)",
           }}
         >
           mbdeviant
         </h1>
-        <p className="text-gray-300 text-sm md:text-lg mt-4">
+        <p className="text-gray-300 cursor-default  text-sm md:text-lg mt-4">
           that&apos;s the name internet knows me by
         </p>
       </div>
