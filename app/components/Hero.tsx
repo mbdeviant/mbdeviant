@@ -27,60 +27,108 @@ export default function Hero() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
-    const points: THREE.Vector3[] = [];
+    const waveLines: THREE.Line[] = [];
+    const waveConfigs = [
+      {
+        color: 0xff7f50,
+        amplitude: 2,
+        frequency: 0.12,
+        speed: 1.9,
+        opacity: 0.8,
+        offset: 0,
+      },
+      {
+        color: 0xff1f70,
+        amplitude: 3,
+        frequency: 0.15,
+        speed: 1.5,
+        opacity: 0.5,
+        offset: 1,
+      },
+      {
+        color: 0x9f50ff,
+        amplitude: 1,
+        frequency: 0.25,
+        speed: 2.2,
+        opacity: 0.6,
+        offset: 2,
+      },
+    ];
+
     const numPoints = 150;
-    let waveWidth = window.innerWidth * 0.8;
+    let waveWidth = window.innerWidth * 0.3;
 
-    for (let i = 0; i < numPoints; i++) {
-      const x = (i / (numPoints - 1) - 0.5) * waveWidth;
-      points.push(new THREE.Vector3(x, 0, 0));
-    }
+    waveConfigs.forEach((config, waveIndex) => {
+      const points: THREE.Vector3[] = [];
 
-    const geometry = new THREE.BufferGeometry().setFromPoints(points);
-    const material = new THREE.LineBasicMaterial({
-      color: 0xff7f50,
-      transparent: true,
-      opacity: 0.8,
+      for (let i = 0; i < numPoints; i++) {
+        const x = (i / (numPoints - 1) - 0.5) * waveWidth;
+        points.push(new THREE.Vector3(x, 0, 0));
+      }
+
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+      const material = new THREE.LineBasicMaterial({
+        color: config.color,
+        transparent: true,
+        opacity: config.opacity,
+      });
+
+      const waveLine = new THREE.Line(geometry, material);
+      waveLine.position.z = -waveIndex * 5;
+      scene.add(waveLine);
+      waveLines.push(waveLine);
     });
-
-    const waveLine = new THREE.Line(geometry, material);
-    scene.add(waveLine);
 
     const animate = () => {
       const time = performance.now() * 0.001;
-      const positions = (geometry.attributes.position as THREE.BufferAttribute)
-        .array as Float32Array;
 
-      for (let i = 0; i < numPoints; i++) {
-        // const x = points[i].x;
+      waveLines.forEach((waveLine, waveIndex) => {
+        const config = waveConfigs[waveIndex];
+        const geometry = waveLine.geometry;
+        const positions = (
+          geometry.attributes.position as THREE.BufferAttribute
+        ).array as Float32Array;
 
-        const baseY = Math.sin(i * 0.2 + time * 2) * 5;
+        for (let i = 0; i < numPoints; i++) {
+          const baseY =
+            Math.sin(
+              i * config.frequency + time * config.speed + config.offset
+            ) * config.amplitude;
 
-        let rippleY = 0;
-        if (rippleStart.current !== null) {
-          const rippleTime = (performance.now() - rippleStart.current) / 1000;
+          let rippleY = 0;
+          if (rippleStart.current !== null) {
+            const rippleTime = (performance.now() - rippleStart.current) / 2000;
+            const rippleDuration = 1;
+            const progress = rippleTime / rippleDuration;
 
-          const rippleDuration = 2;
-          const progress = rippleTime / rippleDuration;
+            if (progress < 1) {
+              const distToClick =
+                Math.abs(i / numPoints - (mouse.current.x + 1) / 2) * 2;
+              const damping = Math.max(0, 1 - distToClick);
+              const fade = Math.pow(1 - progress, 2);
 
-          if (progress < 1) {
-            const distToClick =
-              Math.abs(i / numPoints - (mouse.current.x + 1) / 2) * 2;
-            const damping = Math.max(0, 1 - distToClick);
-            const fade = Math.pow(1 - progress, 2);
+              const rippleFreq = 0.5 + waveIndex * 0.1;
+              const rippleSpeed = 6 - waveIndex * 0.5;
+              const rippleAmp = 10 - waveIndex * 2;
 
-            rippleY = Math.sin(i * 0.5 - rippleTime * 6) * 10 * damping * fade;
-          } else {
-            rippleStart.current = null;
+              rippleY =
+                Math.sin(i * rippleFreq - rippleTime * rippleSpeed) *
+                rippleAmp *
+                damping *
+                fade;
+            } else {
+              rippleStart.current = null;
+            }
           }
+
+          const finalY = baseY + rippleY;
+          positions[i * 3 + 1] = finalY;
         }
 
-        const finalY = baseY + rippleY;
+        geometry.attributes.position.needsUpdate = true;
+      });
 
-        positions[i * 3 + 1] = finalY;
-      }
-
-      geometry.attributes.position.needsUpdate = true;
       renderer.render(scene, camera);
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -103,13 +151,20 @@ export default function Hero() {
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
 
-      for (let i = 0; i < numPoints; i++) {
-        const x = (i / (numPoints - 1) - 0.5) * waveWidth;
-        points[i].x = x;
-        geometry.attributes.position.setX(i, x);
-      }
+      // Update all wave lines
+      waveLines.forEach((waveLine) => {
+        const geometry = waveLine.geometry;
+        const positions = (
+          geometry.attributes.position as THREE.BufferAttribute
+        ).array as Float32Array;
 
-      geometry.attributes.position.needsUpdate = true;
+        for (let i = 0; i < numPoints; i++) {
+          const x = (i / (numPoints - 1) - 0.5) * waveWidth;
+          positions[i * 3] = x;
+        }
+
+        geometry.attributes.position.needsUpdate = true;
+      });
     };
 
     window.addEventListener("click", handleClick);
@@ -124,14 +179,17 @@ export default function Hero() {
         mountRef.current.removeChild(renderer.domElement);
       }
 
-      geometry.dispose();
-      material.dispose();
+      waveLines.forEach((waveLine) => {
+        waveLine.geometry.dispose();
+        (waveLine.material as THREE.Material).dispose();
+      });
+
       renderer.dispose();
     };
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden">
+    <section className="h-screen w-full flex items-center justify-center pointer-events-none relative overflow-hidden">
       <div
         ref={mountRef}
         className="absolute inset-0 z-0 pointer-events-none"
