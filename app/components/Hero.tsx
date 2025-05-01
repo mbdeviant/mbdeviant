@@ -188,7 +188,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden">
+    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden pointer-events-none">
       <div
         ref={mountRef}
         className="absolute inset-0 z-0 pointer-events-none"
