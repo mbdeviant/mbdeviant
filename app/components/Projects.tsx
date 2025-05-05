@@ -6,7 +6,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
-    <section className="snap-start min-h-screen w-full px-6 py-24 bg-black text-white">
+    <section className="relative snap-start min-h-screen w-full px-6 py-24 z-2 bg-transparent text-white">
       <h2 className="text-4xl font-bold mb-4 p-1 text-center bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text  text-transparent">
         Projects
       </h2>

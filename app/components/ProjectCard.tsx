@@ -21,7 +21,7 @@ export default function ProjectCard({
     <div
       className={`flex flex-col md:flex-row ${
         !isLeft ? "md:flex-row-reverse" : ""
-      } items-center gap-6 lg:px-36 `}
+      } items-center gap-6 lg:px-36 z-2 relative `}
     >
       <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
         <Image
