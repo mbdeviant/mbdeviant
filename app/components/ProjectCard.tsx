@@ -23,7 +23,7 @@ export default function ProjectCard({
         !isLeft ? "md:flex-row-reverse" : ""
       } items-center gap-6 lg:px-36 z-2 relative `}
     >
-      <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
+      <div className="w-full md:w-1/3 rounded-lg overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
