@@ -14,7 +14,7 @@ export const projects = [
     description:
       "dummy project data to display in the portfolio. and see how it looks like.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/data/images/dummy2.jpg",
+    image: "/data/images/dummy1.jpg",
     liveUrl: "https://x.com",
   },
   {
@@ -23,7 +23,7 @@ export const projects = [
     description:
       "another dummy project data to display in the portfolio. and see how it looks like.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/data/images/dummy3.jpg",
+    image: "/data/images/dummy1.jpg",
     liveUrl: "https://x.com",
   },
 ];
