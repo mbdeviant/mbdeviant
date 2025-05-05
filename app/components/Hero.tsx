@@ -188,14 +188,14 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden pointer-events-none">
+    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden ">
       <div
         ref={mountRef}
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="fixed top-0 left-0 w-full h-full inset-0 z-0 pointer-events-none"
       />
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-1 text-center px-6">
         <h1
-          className="font-bold bg-gradient-to-r cursor-default select-none from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_30px_rgba(255,100,100)]"
+          className="font-bold bg-gradient-to-r cursor-pointer select-none from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_30px_rgba(255,100,100)]"
           style={{
             fontSize: "clamp(3.5rem, 10vw, 8rem)",
           }}
