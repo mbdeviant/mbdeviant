@@ -15,7 +15,7 @@ export const projects = [
       "What title says. A resume generator. Provide data, save it, download as PDF.",
     tech: ["JavaScript", "React", "Vite", "react-pdf"],
     image: "/data/images/resume-generator.png",
-    liveUrl: "https://x.com",
+    liveUrl: "https://vite-resume-app.vercel.app/",
   },
   {
     id: "inventory-app",
@@ -24,7 +24,7 @@ export const projects = [
       "Add, view and manage products with name, description, category, price, quantity and brand.",
     tech: ["JavaScript", "Express", "MongoDB", "Pug"],
     image: "/data/images/inventory-app.png",
-    liveUrl: "https://x.com",
+    liveUrl: "https://inventory-app-47ig.onrender.com/home",
   },
   {
     id: "the-things-we-say",
@@ -33,7 +33,7 @@ export const projects = [
       "A little place where people say stuff on the internet. Usernames, messages and the things we say.",
     tech: ["JavaScript", "Express", "MongoDB", "EJS"],
     image: "/data/images/the-things-we-say.png",
-    liveUrl: "https://x.com",
+    liveUrl: "https://the-things-we-say.onrender.com/",
   },
   {
     id: "battleship",
@@ -42,6 +42,6 @@ export const projects = [
       "Real-time online battleship game built with Socket.io. Connects two players, syncs turns and handles all the other logic.",
     tech: ["JavaScript", "Express", "SocketIO", "Webpack"],
     image: "/data/images/battleship.png",
-    liveUrl: "https://x.com",
+    liveUrl: "https://battleship-ea28.onrender.com/",
   },
 ];
