@@ -30,7 +30,7 @@ export default function Hero() {
     const waveLines: THREE.Line[] = [];
     const waveConfigs = [
       {
-        color: 0xff7f50,
+        color: 0x778899,
         amplitude: 1,
         frequency: 0.15,
         speed: 2,
@@ -38,7 +38,7 @@ export default function Hero() {
         offset: 3,
       },
       {
-        color: 0xff1f70,
+        color: 0x008080,
         amplitude: 1,
         frequency: 0.11,
         speed: 1.5,
@@ -46,7 +46,7 @@ export default function Hero() {
         offset: 1,
       },
       {
-        color: 0x9f50ff,
+        color: 0xe6e6fa,
         amplitude: 2,
         frequency: 0.19,
         speed: 2.2,
@@ -195,7 +195,7 @@ export default function Hero() {
       />
       <div className="relative z-1 text-center px-6">
         <h1
-          className="font-bold bg-gradient-to-r cursor-pointer select-none from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_30px_rgba(255,100,100)]"
+          className="font-bold bg-gradient-to-r cursor-pointer select-none from-[#DAA520]  to-[#DAA520] bg-clip-text text-transparent transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_50px_rgba(255,215,0)]"
           style={{
             fontSize: "clamp(3.5rem, 10vw, 8rem)",
           }}
