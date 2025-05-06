@@ -1,29 +1,47 @@
 export const projects = [
   {
-    id: "portfolio",
+    id: "mbdeviant",
     title: "This website",
     description:
-      "A portfolio website built with Next.js, TypeScript, and Tailwind CSS. It features a 3D hero section with animated waves and a smooth scrolling experience. The website is designed to showcase my work and skills as a developer.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/data/images/dummy1.jpg",
+      "My corner of the internet. Not finished, probably never will be. It's a work in progress.",
+    tech: ["Next.js", "TypeScript", "Three.js", "Framer Motion", "daisyUI"],
+    image: "/data/images/mbdeviant.png",
     liveUrl: "https://mbdeviant.com",
   },
   {
-    id: "dummy-one",
-    title: "mbdeviant",
+    id: "resume-generator",
+    title: "Resume Generator",
     description:
-      "dummy project data to display in the portfolio. and see how it looks like.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/data/images/dummy1.jpg",
+      "What title says. A resume generator. Provide data, save it, download as PDF.",
+    tech: ["JavaScript", "React", "Vite", "react-pdf"],
+    image: "/data/images/resume-generator.png",
     liveUrl: "https://x.com",
   },
   {
-    id: "dummy-two",
-    title: "mbdeviant",
+    id: "inventory-app",
+    title: "Inventory App",
     description:
-      "another dummy project data to display in the portfolio. and see how it looks like.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/data/images/dummy1.jpg",
+      "Add, view and manage products with name, description, category, price, quantity and brand.",
+    tech: ["JavaScript", "Express", "MongoDB", "Pug"],
+    image: "/data/images/inventory-app.png",
+    liveUrl: "https://x.com",
+  },
+  {
+    id: "the-things-we-say",
+    title: "the things we say",
+    description:
+      "A little place where people say stuff on the internet. Usernames, messages and the things we say.",
+    tech: ["JavaScript", "Express", "MongoDB", "EJS"],
+    image: "/data/images/the-things-we-say.png",
+    liveUrl: "https://x.com",
+  },
+  {
+    id: "battleship",
+    title: "Battleship Game",
+    description:
+      "Real-time online battleship game built with Socket.io. Connects two players, syncs turns and handles all the other logic.",
+    tech: ["JavaScript", "Express", "SocketIO", "Webpack"],
+    image: "/data/images/battleship.png",
     liveUrl: "https://x.com",
   },
 ];
