@@ -8,7 +8,7 @@ export default function About() {
       </div>
 
       <div className="w-full lg:w-1/2 max-w-2xl">
-        <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-500 to-purple-500 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#DAA520] to-[#FFD700] bg-clip-text text-transparent">
           about me
         </h2>
         <p className="text-xl text-gray-300 mb-6">
