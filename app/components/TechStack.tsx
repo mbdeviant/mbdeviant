@@ -1,5 +1,8 @@
+"use client";
+
 import { techStack } from "@/public/data/tech-data";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Category = ({
   title,
@@ -8,7 +11,13 @@ const Category = ({
   title: string;
   items: typeof techStack.frontend;
 }) => (
-  <div className="flex flex-col items-center w-full md:w-1/3 ">
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.3, ease: "easeOut" }}
+    viewport={{ once: false, amount: 0.6 }}
+    className="flex flex-col items-center w-full md:w-1/3"
+  >
     <h3 className="text-2xl font-bold mb-6 text-center text-[#DAA520] tracking-wide">
       {title}
     </h3>
@@ -25,13 +34,13 @@ const Category = ({
         </div>
       ))}
     </div>
-  </div>
+  </motion.div>
 );
 
 export default function TechStackSection() {
   return (
     <section className="relative w-full cursor-default px-6 py-24 z-2 text-white bg-transparent">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 ">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
         <Category title="Front-End" items={techStack.frontend} />
         <Category title="Back-End" items={techStack.backend} />
         <Category title="Miscellaneous" items={techStack.miscellaneous} />
