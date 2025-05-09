@@ -38,7 +38,7 @@ const SpinningModel = () => {
     window.addEventListener("resize", resizeRenderer);
     mount.appendChild(renderer.domElement);
 
-    const hemisphereLight = new THREE.HemisphereLight(0xdaa520, 0xdaa520, 0.1);
+    const hemisphereLight = new THREE.HemisphereLight(0xdaa520, 0xffffff, 0.1);
     scene.add(hemisphereLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffd700, 3);
