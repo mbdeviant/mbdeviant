@@ -41,9 +41,9 @@ export default function TechStackSection() {
   return (
     <section className="relative w-full cursor-default px-6 py-24 z-2 text-white bg-transparent">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
-        <Category title="Front-End" items={techStack.frontend} />
-        <Category title="Back-End" items={techStack.backend} />
-        <Category title="Miscellaneous" items={techStack.miscellaneous} />
+        <Category title="Frontend" items={techStack.frontend} />
+        <Category title="Backend" items={techStack.backend} />
+        <Category title="Misc" items={techStack.miscellaneous} />
       </div>
     </section>
   );
