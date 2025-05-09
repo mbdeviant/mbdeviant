@@ -20,8 +20,8 @@ export const techStack = {
   miscellaneous: [
     { name: "Git", icon: "/data/icons/misc/git.svg" },
     { name: "GitHub", icon: "/data/icons/misc/github.svg" },
+    { name: "Figma", icon: "/data/icons/misc/figma.svg" },
     { name: "Webpack", icon: "/data/icons/misc/webpack.svg" },
-    { name: "Vercel", icon: "/data/icons/misc/vercel.svg" },
     { name: "Linux", icon: "/data/icons/misc/linux.svg" },
   ],
 };
