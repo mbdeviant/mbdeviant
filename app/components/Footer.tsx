@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 export default function ContactSection() {
   return (
@@ -38,8 +39,16 @@ export default function ContactSection() {
           <FaGithub size={30} />
         </a>
       </div>
-
       <hr className="border-gray-800 mb-6 w-3/4 mx-auto" />
+      <div className="flex justify-center mb-6">
+        <Image
+          src={"data/icons/mbdeviant-logo.svg"}
+          alt="mbdeviant logo"
+          width={100}
+          height={100}
+        />
+      </div>
+
       <p className="text-xs text-gray-600">© 2025 - mbdeviant</p>
     </section>
   );
