@@ -14,7 +14,40 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "mbdeviant",
-  description: "being developed by mbdeviant",
+  description:
+    "website of a full-stack developer building web apps that don't suck",
+  keywords: [
+    "mbdeviant",
+    "full-stack developer",
+    "portfolio",
+    "web development",
+  ],
+  authors: [
+    {
+      name: "mbdeviant",
+      url: "https://mbdeviant.com",
+    },
+  ],
+  creator: "mbdeviant",
+  openGraph: {
+    title: "mbdeviant",
+    description: "website of a full-stack developer",
+    url: "https://mbdeviant.com",
+    siteName: "mbdeviant",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "mbdeviant logo",
+      },
+    ],
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
