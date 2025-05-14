@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "mbdeviant",
-  description:
-    "website of a full-stack developer building web apps that don't suck",
+  description: "personal website of a full-stack developer",
   keywords: [
     "mbdeviant",
     "full-stack developer",
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
   creator: "mbdeviant",
   openGraph: {
     title: "mbdeviant",
-    description: "website of a full-stack developer",
+    description: "personal website of a full stack developer",
     url: "https://mbdeviant.com",
     siteName: "mbdeviant",
     images: [
