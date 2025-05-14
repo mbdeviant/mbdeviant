@@ -35,13 +35,20 @@ export const metadata: Metadata = {
     siteName: "mbdeviant",
     images: [
       {
-        url: "/og-image.png",
+        url: "/data/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "mbdeviant logo",
       },
     ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "mbdeviant",
+    description: "full-stack dev building cool stuff",
+    images: ["/data/images/og-image.png"],
+    creator: "@mbdeviant",
   },
   robots: {
     index: true,
@@ -58,6 +65,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/data/icons/ios-icon.png"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
