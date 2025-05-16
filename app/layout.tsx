@@ -10,7 +10,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "mbdeviant",
-  description: "mb, full-stack developer",
+  description:
+    "mb, full-stack developer building web applications focused on clarity, usability and modern design",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -31,12 +32,13 @@ export const metadata: Metadata = {
   creator: "mbdeviant",
   openGraph: {
     title: "mbdeviant",
-    description: "mb, full-stack developer",
+    description:
+      "mb, full-stack developer building web applications focused on clarity, usability and modern design",
     url: "https://mbdeviant.com",
     siteName: "mbdeviant",
     images: [
       {
-        url: "/data/images/og-image.png",
+        url: "https://mbdeviant.com/data/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "mbdeviant logo",
@@ -48,12 +50,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "mbdeviant",
     description: "full-stack dev building cool stuff",
-    images: ["/data/images/og-image.png"],
+    images: ["https://mbdeviant.com/data/images/og-image.png"],
     creator: "@mbdeviant",
   },
   robots: {
     index: true,
     follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
   },
 };
 
@@ -64,14 +68,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/data/icons/ios-icon.png"
-        />
-      </head>
       <body className={`${spaceGrotesk.variable} antialiased`}>{children}</body>
     </html>
   );
