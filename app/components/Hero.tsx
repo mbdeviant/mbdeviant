@@ -197,7 +197,7 @@ export default function Hero() {
         <h1
           className="font-bold bg-gradient-to-r cursor-pointer select-none from-[#DAA520]  to-[#DAA520] bg-clip-text text-transparent transition-all duration-300 ease-in-out hover:drop-shadow-[0_0_50px_rgba(255,215,0)]"
           style={{
-            fontSize: "clamp(3.5rem, 10vw, 8rem)",
+            fontSize: "clamp(4rem, 12vw, 10rem)",
           }}
         >
           mbdeviant
