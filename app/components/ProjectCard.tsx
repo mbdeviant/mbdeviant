@@ -34,9 +34,11 @@ export default function ProjectCard({
         />
       </div>
       <div className="w-full md:w-1/2">
-        <h4 className="text-xl font-semibold mb-1">{project.title}</h4>
-        <p className="text-gray-400 mb-3">{project.description}</p>
-        <div className="flex flex-wrap gap-2 text-sm mb-2">
+        <h4 className="text-xl font-medium mb-1">{project.title}</h4>
+        <p className="text-m font-light text-gray-400 mb-3">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-2 text-xs mb-2">
           {project.tech.map((t, i) => (
             <span
               key={i}
@@ -51,9 +53,9 @@ export default function ProjectCard({
             <a
               href={project.liveUrl}
               target="_blank"
-              className="text-orange-300 underline"
+              className="text-orange-300 hover:text-orange-400 transition duration-200"
             >
-              Live
+              See it live
             </a>
           )}
         </div>
