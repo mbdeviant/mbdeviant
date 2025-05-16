@@ -3,43 +3,42 @@ export const projects = [
     id: "mbdeviant",
     title: "This website",
     description:
-      "My corner of the internet. Not finished, probably never will be. It's a work in progress.",
+      "my space on the internet. not finished, probably never will be.",
     tech: ["Next.js", "TypeScript", "Three.js", "Framer Motion", "daisyUI"],
     image: "/data/images/mbdeviant.png",
-    liveUrl: "https://mbdeviant.com",
   },
   {
     id: "resume-generator",
     title: "Resume Generator",
     description:
-      "What title says. A resume generator. Provide data, save it, download as PDF.",
+      "what title says. a resume generator. provide data, save it, download as PDF.",
     tech: ["JavaScript", "React", "Vite", "react-pdf"],
     image: "/data/images/resume-generator.png",
     liveUrl: "https://vite-resume-app.vercel.app/",
   },
   {
-    id: "inventory-app",
-    title: "Inventory App",
-    description:
-      "Add, view and manage products with name, description, category, price, quantity and brand.",
-    tech: ["JavaScript", "Express", "MongoDB", "Pug"],
-    image: "/data/images/inventory-app.png",
-    liveUrl: "https://inventory-app-47ig.onrender.com/home",
-  },
-  {
     id: "the-things-we-say",
     title: "the things we say",
     description:
-      "A little place where people say stuff on the internet. Usernames, messages and the things we say.",
+      "a little place where people say stuff on the internet. leave a message if you feel like it.",
     tech: ["JavaScript", "Express", "MongoDB", "EJS"],
     image: "/data/images/the-things-we-say.png",
     liveUrl: "https://the-things-we-say.onrender.com/",
   },
   {
+    id: "inventory-app",
+    title: "Inventory App",
+    description:
+      "add, view and manage products with name, description, category, price, quantity and brand.",
+    tech: ["JavaScript", "Express", "MongoDB", "Pug"],
+    image: "/data/images/inventory-app.png",
+    liveUrl: "https://inventory-app-47ig.onrender.com/home",
+  },
+  {
     id: "battleship",
     title: "Battleship Game",
     description:
-      "Real-time online battleship game built with Socket.io. Connects two players, syncs turns and handles all the other logic.",
+      "real-time online battleship game built with socket.io. connects two players, syncs turns and handles all the other logic. you can try it out by playing in two different tabs.",
     tech: ["JavaScript", "Express", "SocketIO", "Webpack"],
     image: "/data/images/battleship.png",
     liveUrl: "https://battleship-ea28.onrender.com/",
