@@ -4,12 +4,12 @@ import Image from "next/image";
 export default function ContactSection() {
   return (
     <section className="relative w-full px-6 py-24 z-2 cursor-default text-white text-center bg-transparent">
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#DAA520] mb-10 tracking-wide">
+      <h2 className="text-4xl sm:text-4xl font-bold text-[#DAA520] mb-10 tracking-wide">
         Contact
       </h2>
 
       <p className="text-lg sm:text-xl mb-4 text-gray-300">
-        Write me an e-mail at:
+        write me an e-mail at:
       </p>
       <a
         href="mailto:mbdeviant@gmail.com"
