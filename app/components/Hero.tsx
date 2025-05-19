@@ -188,7 +188,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden ">
+    <section
+      id="hero"
+      className="h-screen w-full flex items-center justify-center relative overflow-hidden "
+    >
       <div
         ref={mountRef}
         className="fixed top-0 left-0 w-full h-full inset-0 z-0 pointer-events-none"
