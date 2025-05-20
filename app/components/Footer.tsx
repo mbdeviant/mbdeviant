@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ContactSection() {
   return (
     <section
-      id="footer"
+      id="contact"
       className="relative w-full px-6 py-24 z-2 cursor-default text-white text-center bg-transparent"
     >
       <h2 className="text-4xl sm:text-4xl font-bold text-[#DAA520] mb-10 tracking-wide">
