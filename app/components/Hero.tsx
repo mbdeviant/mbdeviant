@@ -189,7 +189,7 @@ export default function Hero() {
 
   return (
     <section
-      id="hero"
+      id="home"
       className="h-screen w-full flex items-center justify-center relative overflow-hidden "
     >
       <div
