@@ -4,7 +4,7 @@ import React from "react";
 import { useActiveSection } from "../lib/hooks/useActiveSection";
 
 export default function Navbar() {
-  const sections = ["hero", "about", "projects", "contact"];
+  const sections = ["home", "about", "projects", "contact"];
   const active = useActiveSection(sections);
 
   return (
@@ -17,7 +17,7 @@ export default function Navbar() {
                 href={`#${id}`}
                 className={`transition-colors duration-200 ${
                   active === id
-                    ? "text-white font-bold underline underline-offset-4"
+                    ? "text-white font-small underline underline-offset-4 decoration-amber-400"
                     : "text-gray-400 hover:text-white"
                 }`}
               >
