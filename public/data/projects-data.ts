@@ -4,7 +4,14 @@ export const projects = [
     title: "This website",
     description:
       "my space on the internet. not finished, probably never will be.",
-    tech: ["Next.js", "TypeScript", "Three.js", "Framer Motion", "daisyUI"],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Three.js",
+      "Framer Motion",
+      "daisyUI",
+    ],
     image: "/data/images/mbdeviant.png",
   },
   {
