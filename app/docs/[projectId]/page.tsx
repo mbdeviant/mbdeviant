@@ -1,6 +1,5 @@
 import React from "react";
-
-import { projects } from "../../../public/data/projects-data";
+import { projects } from "@/public/data/projects-data";
 
 export default async function ProjectDocs({
   params,
