@@ -1,6 +1,8 @@
 import Image from "next/legacy/image";
+import Link from "next/link";
 
 interface Project {
+  id: string;
   image: string;
   title: string;
   description: string;
@@ -58,6 +60,7 @@ export default function ProjectCard({
               See it live
             </a>
           )}
+          <Link href={`docs/${project.id}`}>Learn more</Link>
         </div>
       </div>
     </div>
