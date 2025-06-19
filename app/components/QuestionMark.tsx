@@ -68,15 +68,6 @@ const SpinningModel = () => {
     controls.addEventListener("start", handleStart);
     controls.addEventListener("end", handleEnd);
 
-    // controls.addEventListener("start", () => {
-    //   isUserInteracting.current = true;
-    //   if (spinTimeout.current) clearTimeout(spinTimeout.current);
-    // });
-    // controls.addEventListener("end", () => {
-    //   spinTimeout.current = setTimeout(() => {
-    //     isUserInteracting.current = false;
-    //   }, 100);
-    // });
 
     const resizeRenderer = () => {
       const width = mount.clientWidth;
