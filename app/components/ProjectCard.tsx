@@ -1,14 +1,6 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
-
-interface Project {
-  id: string;
-  image: string;
-  title: string;
-  description: string;
-  tech: string[];
-  liveUrl?: string;
-}
+import { Project } from "@/lib/types/project-data-types";
 
 export default function ProjectCard({
   project,
