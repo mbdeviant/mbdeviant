@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-scroll";
-import { useActiveSection } from "../lib/hooks/useActiveSection";
+import { useActiveSection } from "../../lib/hooks/useActiveSection";
 
 export default function Navbar() {
   const sections = ["home", "about", "projects", "contact"];
