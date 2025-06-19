@@ -20,7 +20,7 @@ export default function Navbar() {
                 duration={500}
                 className={`transition-colors duration-200 ${
                   active === id
-                    ? "text-amber-400 font-bold"
+                    ? "text-[#DAA520] font-bold"
                     : "text-gray-400 hover:text-white"
                 }`}
               >
