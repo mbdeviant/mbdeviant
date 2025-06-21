@@ -28,11 +28,28 @@ export const projectsLearnMore = [
     },
     screenShots: [],
   },
-  // tech, tldr
-  // key features
-  // challenges
-  // arcitecture
-  // codebase link
-  // maybe add some testing to display
+  {
+    id: "inventory-app",
+    title: "Inventory App",
+    overview:
+      "a simple yet functional CRUD-based inventory system. designed for keeping track of products, whether it's for a small shop or just testing out backend logic. users can add, edit, and delete products. each with its name, price, stock info, and description. the interface is clean and straight to the point. built this to strengthen my Express backend game and solidify my understanding of RESTful routing. hosted on Render, fully persistent with MongoDB.",
+    insights:
+      "the app is powered by Node.js and Express on the backend, with Mongoose for MongoDB data modeling within an MVC architecture. input validation via Express Validator, security headers with Helmet, and rate-limiting to prevent abuse. sessions -which stored in MongoDB- manage admin authentication for delete operations. all delete actions are admin-only, enforced by middleware.",
+    buildNotes: {
+      first:
+        "ran into some schema validation issues early on. turns out forgetting to mark required fields in Mongoose leads to very silent bugs.",
+      second:
+        "learned the importance of clear route naming for maintainabilty, or things can get complicated fast.",
+      third:
+        "hosting on Render was smooth, but had to whitelist static IPs to connect the app securely to MongoDB Atlas.",
+    },
+    codebaseLink: "https://github.com/mbdeviant/inventory-app",
+    tldr: {
+      first: "Node.js + Express backend with MongoDB for data storage.",
+      second:
+        "CRUD operations, admin-only access, secured with Helmet and input validation.",
+      third: "MVC architecture, sessions for authentication, hosted on Render.",
+    },
+    screenShots: [],
+  },
 ];
-//
