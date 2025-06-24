@@ -77,4 +77,24 @@ export const projectsLearnMore = [
     },
     screenShots: [],
   },
+  {
+    id: "resume-generator",
+    title: "Resume Generator",
+    overview:
+      "a simple, focused CV builder where you fill out your info and see a live preview after submission. you can export your resume as a PDF in one click, no signups. I built this to experiment with React forms, state management, and PDF generation. the UI is clean, dark-themed, and somewhat responsive. it’s practical, but also a playground for trying out modern frontend patterns.",
+    insights:
+      "built with React (Vite for setup), using functional components and hooks throughout. the PDF export uses @react-pdf/renderer, which was a fun challenge to get looking right. all state is local. no backend, no cloud, just your browser. forms are split into sections. the preview renders user data. I kept the CSS custom and minimal, aiming for a smooth, distraction-free feel. the code is organized by feature, so it’s easy to extend or tweak.",
+    buildNotes: {
+      first:
+        "the PDF export was trickier than expected. matching the live preview and the PDF layout took some trial and error.",
+    },
+    codebaseLink: "https://github.com/mbdeviant/resume-generator",
+    tldr: {
+      first:
+        "React/Vite, functional components, hooks, and @react-pdf/renderer.",
+      second: "live CV preview and instant PDF export",
+      third: "hosted on Vercel",
+    },
+    screenShots: [],
+  },
 ];
