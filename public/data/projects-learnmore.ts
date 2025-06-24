@@ -50,13 +50,16 @@ export const projectsLearnMore = [
         "CRUD operations, admin-only access, secured with Helmet and input validation.",
       third: "MVC architecture, sessions for authentication, hosted on Render.",
     },
-    screenShots: [],
+    screenShots: [
+      "/data/images/inventory-app.png",
+      "/data/images/inventory-app-2.png",
+    ],
   },
   {
     id: "the-things-we-say",
     title: "the things we say",
     overview:
-      "a minimal message wall where users can drop a username and a message. once submitted, it instantly shows up on the homepage with a timestamp. no auth, no filters, just raw input from whoever visits. I made this app to experiment with user-submitted data, input handling, and a classic Express + Mongo setup. the vibe is old-school, but the backend is clean and safe. it’s lightweight, persistent, and actually kind of fun to read through. say hi since you’re here.",
+      "a minimal message wall where users can drop a username and a message. once submitted, it instantly shows up on the homepage with a timestamp. no auth, no filters, just raw input from whoever visits. I made this app to experiment with user-submitted data, input handling, and a classic Express + Mongo setup. the vibe is old-school, but the backend is clean and safe. it’s lightweight, persistent, and actually kind of fun to read through.",
     insights:
       "built entirely with vanilla JavaScript on the frontend and Express.js on the backend. rate limiting is applied. used EJS for server-side rendering, keeping the frontend simple but dynamic. MongoDB handles storage, with each message saved along with its username and time of creation. inputs are sanitized, and I added basic validation so people don’t send empty messages. everything’s structured to be readable and extendable.",
     buildNotes: {
@@ -94,6 +97,31 @@ export const projectsLearnMore = [
         "React/Vite, functional components, hooks, and @react-pdf/renderer.",
       second: "live CV preview and instant PDF export",
       third: "hosted on Vercel",
+    },
+    screenShots: [],
+  },
+  {
+    id: "battleship-game",
+    title: "Battleship Game",
+    overview:
+      "an online, live multiplayer battleship game. I originally started this by following an Ania Kubów tutorial, where she covered the game logic. the plan was that another dev would build the multiplayer logic. but the project got cancelled before that happened. so after finishing the frontend, I realized I was on my own and had to write the entire multiplayer logic. to make things harder, Ania skipped over some of the actual game rules, so I added those in myself too. the game works and it’s surprisingly fun. but let’s be real, the codebase is pure chaos. ships are placed on a 10x10 grid, tracked via classes directly in the DOM. which means yes, users could literally inspect the page and see enemy ship placements. to patch that, I did what any resourceful dev would do: disabled devtools on production. not proud, but hey, as long as it works. right?",
+    insights:
+      "built with Node.js and Socket.IO for real-time communication. there's no frontend framework, just raw JavaScript, HTML, and a ton of DOM manipulation. the game loop logic lives server-side, with socket events managing turn syncing, move validation, and win conditions. there’s no database or sessions. just temporary in-memory state tied to socket connections. while the structure is... unstructured. the app is not even responsive so using desktop device is recommended. building this taught me a ton about WebSockets, multiplayer game flows, and how fast things can spiral when you don’t separate concerns. would I rebuild it now with a clean architecture? absolutely. but I keep it as it is to see a past version of myself.",
+    buildNotes: {
+      first:
+        "the entire game logic is stuffed into a single `index.js` file with 500+ lines of code. refactoring wasn’t even on my radar back then.",
+      second:
+        "handling the logic behind the player turns and sharing the ship placement data between the clients had me questioning every line of code and life choices.",
+      third:
+        "ship placements were done by toggling classes on grid divs. looked fine until I realized anyone could inspect elements to cheat.",
+      fourth:
+        "despite the mess, the game works. it’s fast, fun, and full of lessons.",
+    },
+    codebaseLink: "https://github.com/mbdeviant/battleship-project/",
+    tldr: {
+      first: "Node.js backend with Socket.IO for multiplayer logic.",
+      second: "vanilla JS frontend with 100-tile interactive grids.",
+      third: "Webpack for bundling.",
     },
     screenShots: [],
   },
