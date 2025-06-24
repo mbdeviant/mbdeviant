@@ -15,6 +15,15 @@ export const projects = [
     image: "/data/images/mbdeviant.png",
   },
   {
+    id: "resume-generator",
+    title: "Resume Generator",
+    description:
+      "what title says. a resume generator. provide data, save it, download as PDF.",
+    tech: ["JavaScript", "React", "Vite", "react-pdf"],
+    image: "/data/images/resume-generator.png",
+    liveUrl: "https://vite-resume-app.vercel.app/",
+  },
+  {
     id: "inventory-app",
     title: "Inventory App",
     description:
@@ -31,15 +40,6 @@ export const projects = [
     tech: ["JavaScript", "Express", "MongoDB", "EJS"],
     image: "/data/images/the-things-we-say.png",
     liveUrl: "https://the-things-we-say.onrender.com/",
-  },
-  {
-    id: "resume-generator",
-    title: "Resume Generator",
-    description:
-      "what title says. a resume generator. provide data, save it, download as PDF.",
-    tech: ["JavaScript", "React", "Vite", "react-pdf"],
-    image: "/data/images/resume-generator.png",
-    liveUrl: "https://vite-resume-app.vercel.app/",
   },
   {
     id: "battleship-game",
