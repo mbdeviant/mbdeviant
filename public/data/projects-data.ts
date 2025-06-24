@@ -42,7 +42,7 @@ export const projects = [
     liveUrl: "https://vite-resume-app.vercel.app/",
   },
   {
-    id: "battleship",
+    id: "battleship-game",
     title: "Battleship Game",
     description:
       "real-time online battleship game built with socket.io. connects two players, syncs turns and handles all the other logic. you can try it out by playing in two different tabs.",
