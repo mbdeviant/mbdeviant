@@ -105,7 +105,7 @@ export default async function ProjectDocs({
           href="/#projects"
           className=" link-accent  text-[#DAA520] text-md"
         >
-          &#8592;Back to all projects
+          &#8592;back to all projects
         </Link>
 
         {project.id != "mbdeviant" && (
