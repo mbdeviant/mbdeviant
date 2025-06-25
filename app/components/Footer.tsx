@@ -45,7 +45,7 @@ export default function ContactSection() {
       <hr className="border-gray-800 mb-6 w-3/4 mx-auto" />
       <div className="flex justify-center mb-6">
         <Image
-          src={"data/icons/mbdeviant-logo.svg"}
+          src={"/data/icons/mbdeviant-logo.svg"}
           alt="mbdeviant logo"
           width={100}
           height={100}
