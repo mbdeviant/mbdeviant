@@ -47,7 +47,8 @@ export default function ProjectCard({
             <a
               href={project.liveUrl}
               target="_blank"
-              className="text-orange-300 hover:text-orange-400 transition duration-200"
+              rel="noopener noreferrer"
+              className="text-[#DAA520] hover:text-white"
             >
               See it live
             </a>
