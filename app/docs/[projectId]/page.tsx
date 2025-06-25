@@ -85,11 +85,11 @@ export default async function ProjectDocs({
 
       {projectLearnMore.screenShots?.length ? (
         <section>
-          <h2 className="text-2xl font-semibold mb-3">Screenshots</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {projectLearnMore.screenShots.map((src, i) => (
               <Image
                 width={500}
+                height={500}
                 key={i}
                 src={src}
                 alt={`Screenshot ${i + 1}`}
@@ -100,13 +100,24 @@ export default async function ProjectDocs({
         </section>
       ) : null}
 
-      <div className="text-center mt-8">
+      <div className="flex justify-center gap-5 text-center mt-8">
         <Link
           href="/#projects"
-          className="link link-accent  text-[#DAA520] text-md"
+          className=" link-accent  text-[#DAA520] text-md"
         >
-          ← Back to all projects
+          &#8592;Back to all projects
         </Link>
+
+        {project.id != "mbdeviant" && (
+          <a
+            className=" link-accent  text-[#DAA520] text-md"
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            view the project live&#8594;
+          </a>
+        )}
       </div>
     </div>
   );
