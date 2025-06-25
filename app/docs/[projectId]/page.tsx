@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { projects } from "@/public/data/projects-data";
+import ImageLightbox from "@/app/components/ImageLightbox";
 import { projectsLearnMore as learnMore } from "@/public/data/projects-learnmore";
 
 export default async function ProjectDocs({
@@ -14,7 +14,17 @@ export default async function ProjectDocs({
   const projectLearnMore = learnMore.find((l) => l.id === projectId);
 
   if (!project)
-    return <div className="text-center mt-12 z-2">Project not found.</div>;
+    return (
+      <div className="flex  flex-col gap-12 text-center  text-2xl z-2">
+        whatever you are looking for, is not here.
+        <Link
+          href="/#projects"
+          className=" link-accent  text-[#DAA520] text-md"
+        >
+          &#8592;back to all projects
+        </Link>
+      </div>
+    );
   if (!projectLearnMore)
     return (
       <div className="text-center mt-12 z-2">Learn more data not found.</div>
@@ -85,18 +95,7 @@ export default async function ProjectDocs({
 
       {projectLearnMore.screenShots?.length ? (
         <section>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {projectLearnMore.screenShots.map((src, i) => (
-              <Image
-                width={500}
-                height={500}
-                key={i}
-                src={src}
-                alt={`Screenshot ${i + 1}`}
-                className="rounded-lg shadow-lg"
-              />
-            ))}
-          </div>
+          <ImageLightbox images={projectLearnMore.screenShots} />
         </section>
       ) : null}
 
