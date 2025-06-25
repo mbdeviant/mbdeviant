@@ -100,7 +100,7 @@ export default async function ProjectDocs({
         </section>
       ) : null}
 
-      <div className="flex justify-center gap-5 text-center mt-8">
+      <div className="flex justify-center gap-5 text-center mt-8 ml-2">
         <Link
           href="/#projects"
           className=" link-accent  text-[#DAA520] text-md"
