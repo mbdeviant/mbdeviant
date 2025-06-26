@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-5 left-1/2 -translate-x-1/2 z-15 bg-black/80 backdrop-blur-xs px-6 py-3 rounded-xl shadow-md transition-all duration-300"
+      className="fixed top-5 left-1/2 -translate-x-1/2 z-15 border border-gray-800 bg-black/80 backdrop-blur-xs px-6 py-3 rounded-xl shadow-md transition-all duration-300"
       aria-label="navigation bar"
     >
       <div className="max-w-7xl mx-auto flex justify-center items-center ">
