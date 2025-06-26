@@ -9,6 +9,7 @@ export default function Projects() {
     <section
       id="projects"
       className="relative snap-start min-h-screen cursor-default w-full px-6 py-24 z-2 bg-transparent text-white"
+      aria-label="projects section"
     >
       <h2 className="text-5xl font-bold mb-4 p-1 text-center bg-gradient-to-r from-[#DAA520] to-[#FFD700]  bg-clip-text  text-transparent">
         Projects

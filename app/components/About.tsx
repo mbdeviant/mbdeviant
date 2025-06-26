@@ -4,9 +4,13 @@ export default function About() {
   return (
     <section
       id="about"
+      aria-label="about section"
       className="relative w-full flex flex-col z-2 cursor-default lg:flex-row items-center justify-center text-center lg:text-left px-8 py-20 gap-12 bg-transparent text-white"
     >
-      <div className="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-[500px]">
+      <div
+        className="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-[500px]"
+        aria-label="spinning 3D object"
+      >
         <QuestionMark />
       </div>
 

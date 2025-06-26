@@ -15,7 +15,7 @@ export default function HeaderLogo({ link = true }: { link?: boolean }) {
   );
 
   return link ? (
-    <Link href="/" className="block z-2">
+    <Link href="/" className="block z-2" aria-label="homepage: mbdeviant logo">
       {logoElement}
     </Link>
   ) : (

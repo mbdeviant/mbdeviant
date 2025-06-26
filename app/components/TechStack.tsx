@@ -27,7 +27,7 @@ const Category = ({
           key={tech.name}
           className="flex flex-col items-center group transition-all hover:scale-110"
         >
-          <Image src={tech.icon} alt={tech.name} width={40} height={40} />
+          <Image src={tech.icon} alt="" width={40} height={40} />
           <span className="mt-2 text-sm text-gray-400 group-hover:text-[#DAA520] transition">
             {tech.name}
           </span>
@@ -39,7 +39,10 @@ const Category = ({
 
 export default function TechStackSection() {
   return (
-    <section className="relative w-full cursor-default px-6 py-24 z-2 text-white bg-transparent">
+    <section
+      className="relative w-full cursor-default px-6 py-24 z-2 text-white bg-transparent"
+      aria-label="tech stack section"
+    >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
         <Category title="Frontend" items={techStack.frontend} />
         <Category title="Backend" items={techStack.backend} />

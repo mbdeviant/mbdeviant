@@ -5,6 +5,7 @@ export default function Hero() {
     <section
       id="home"
       className="h-screen w-full flex items-center justify-center relative overflow-hidden "
+      aria-label="homepage section"
     >
       <div className="relative z-1 text-center px-6">
         <h1

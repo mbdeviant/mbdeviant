@@ -31,7 +31,10 @@ export default async function ProjectDocs({
     );
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-10 text-white z-2">
+    <div
+      className="max-w-4xl mx-auto p-6 space-y-10 text-white z-2"
+      aria-label="project details page"
+    >
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-2 text-[#DAA520]">
           {projectLearnMore.title}

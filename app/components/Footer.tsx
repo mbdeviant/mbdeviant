@@ -3,9 +3,10 @@ import Image from "next/image";
 
 export default function ContactSection() {
   return (
-    <section
+    <footer
       id="contact"
       className="relative w-full px-6 py-24 z-2 cursor-default text-white text-center bg-transparent"
+      aria-label="contact section"
     >
       <h2 className="text-4xl sm:text-4xl font-bold text-[#DAA520] mb-10 tracking-wide">
         Contact
@@ -30,6 +31,7 @@ export default function ContactSection() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-[#DAA520] transition"
+          aria-label="linkedin profile"
         >
           <FaLinkedin size={30} />
         </a>
@@ -38,6 +40,7 @@ export default function ContactSection() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-[#DAA520] transition"
+          aria-label="github profile"
         >
           <FaGithub size={30} />
         </a>
@@ -47,12 +50,13 @@ export default function ContactSection() {
         <Image
           src={"/data/icons/mbdeviant-logo.svg"}
           alt="mbdeviant logo"
+          aria-hidden="true"
           width={100}
           height={100}
         />
       </div>
 
       <p className="text-xs text-gray-600">© 2025 - mbdeviant</p>
-    </section>
+    </footer>
   );
 }

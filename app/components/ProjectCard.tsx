@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/lib/types/project-data-types";
 
@@ -20,15 +20,14 @@ export default function ProjectCard({
       <div className="w-full md:w-1/3 rounded-lg overflow-hidden">
         <Image
           src={project.image}
-          alt={project.title}
+          alt=""
           width={500}
           height={300}
-          layout="responsive"
-          objectFit="cover"
+          className="rounded-lg object-cover w-full h-auto"
         />
       </div>
       <div className="w-full md:w-1/2">
-        <h4 className="text-xl font-medium mb-1">{project.title}</h4>
+        <h3 className="text-xl font-medium mb-1">{project.title}</h3>
         <p className="text-m font-light text-gray-400 mb-3">
           {project.description}
         </p>
