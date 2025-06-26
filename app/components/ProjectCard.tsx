@@ -52,7 +52,12 @@ export default function ProjectCard({
               See it live
             </a>
           )}
-          <Link href={`docs/${project.id}`}>Learn more</Link>
+          <Link
+            href={`docs/${project.id}`}
+            className="text-[#05adad] hover:text-white"
+          >
+            Learn more
+          </Link>
         </div>
       </div>
     </div>
