@@ -45,6 +45,7 @@ export default function ProjectCard({
           {project.liveUrl && (
             <a
               href={project.liveUrl}
+              aria-label="open project in new tab"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#DAA520] hover:text-white"
