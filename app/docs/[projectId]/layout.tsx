@@ -1,4 +1,5 @@
 import HeaderLogo from "@/app/components/HeaderLogo";
+import DocsSkipLinks from "@/app/components/DocsSkipLinks";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,6 +9,7 @@ interface LayoutProps {
 export default async function ProjectLayout({ children }: LayoutProps) {
   return (
     <div className="flex flex-col min-h-screen items-center z-2">
+      <DocsSkipLinks />
       <header className="w-full flex justify-center py-6 z-2">
         <HeaderLogo />
       </header>

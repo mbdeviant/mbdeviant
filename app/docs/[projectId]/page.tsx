@@ -31,29 +31,39 @@ export default async function ProjectDocs({
     );
 
   return (
-    <div
+    <main
       className="max-w-4xl mx-auto p-6 space-y-10 text-white z-2"
+      id="main-content"
       aria-label="project details page"
     >
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-2 text-[#DAA520]">
+        <h1
+          id="project-title-heading"
+          className="text-4xl font-bold mb-2 text-[#DAA520]"
+        >
           {projectLearnMore.title}
         </h1>
         <p className="text-sm text-gray-400">learn more about this project</p>
       </div>
 
       <section>
-        <h2 className="text-2xl font-medium mb-3"> Overview</h2>
+        <h2 id="overview-heading" className="text-2xl font-medium mb-3">
+          {" "}
+          Overview
+        </h2>
         <p className="text-base text-gray-400 leading-relaxed">
           {projectLearnMore.overview}
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-medium mb-3">Insights</h2>
+        <h2 id="insights-heading" className="text-2xl font-medium mb-3">
+          Insights
+        </h2>
         <p className="text-base text-gray-400 leading-relaxed whitespace-pre-line">
           {projectLearnMore.insights}
         </p>
+
         {projectLearnMore.codebaseLink && (
           <div className="text-gray-400">
             <p>
@@ -61,6 +71,8 @@ export default async function ProjectDocs({
               <a
                 href={projectLearnMore.codebaseLink}
                 target="_blank"
+                aria-label="new tab: project source code"
+                role="button"
                 rel="noopener noreferrer"
                 className=" text-[#DAA520] hover:underline"
               >
@@ -72,7 +84,9 @@ export default async function ProjectDocs({
       </section>
 
       <section>
-        <h2 className="text-2xl font-medium mb-3">Build Notes</h2>
+        <h2 id="build-notes-heading" className="text-2xl font-medium mb-3">
+          Build Notes
+        </h2>
         <ul className="space-y-3 text-gray-400 list-disc list-inside">
           {Object.values(projectLearnMore.buildNotes).map(
             (note, i) =>
@@ -86,18 +100,20 @@ export default async function ProjectDocs({
       </section>
 
       <section>
-        <h2 className="text-2xl font-medium  mb-3">TL;DR</h2>
-        <div className="space-y-3 text-gray-400 list-disc list-inside">
+        <h2 id="summary-heading" className="text-2xl font-medium  mb-3">
+          TL;DR
+        </h2>
+        <ul className="space-y-3 text-gray-400 list-disc list-inside">
           {Object.values(projectLearnMore.tldr).map((item, i) => (
             <li key={i} className="text-base leading-relaxed">
               {item}
             </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {projectLearnMore.screenShots?.length ? (
-        <section>
+        <section aria-label="project screenshots">
           <ImageLightbox images={projectLearnMore.screenShots} />
         </section>
       ) : null}
@@ -105,6 +121,8 @@ export default async function ProjectDocs({
       <div className="flex justify-center gap-5 text-center mt-8 ml-2">
         <Link
           href="/#projects"
+          aria-label="back to all projects"
+          role="button"
           className=" link-accent  text-[#DAA520] text-md"
         >
           &#8592;back to all projects
@@ -115,12 +133,14 @@ export default async function ProjectDocs({
             className=" link-accent  text-[#DAA520] text-md"
             href={project.liveUrl}
             target="_blank"
+            aria-label="new tab: view project"
+            role="button"
             rel="noopener noreferrer"
           >
             view the project live&#8594;
           </a>
         )}
       </div>
-    </div>
+    </main>
   );
 }
