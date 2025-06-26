@@ -5,10 +5,15 @@ export default function ContactSection() {
   return (
     <footer
       id="contact"
+      tabIndex={-1}
       className="relative w-full px-6 py-24 z-2 cursor-default text-white text-center bg-transparent"
       aria-label="contact section"
     >
-      <h2 className="text-4xl sm:text-4xl font-bold text-[#DAA520] mb-10 tracking-wide">
+      <h2
+        id="contact-heading"
+        tabIndex={-1}
+        className="text-4xl sm:text-4xl font-bold text-[#DAA520] mb-10 tracking-wide"
+      >
         Contact
       </h2>
 
@@ -31,7 +36,7 @@ export default function ContactSection() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-[#DAA520] transition"
-          aria-label="linkedin profile"
+          aria-label="open in new tab: linkedin profile"
         >
           <FaLinkedin size={30} />
         </a>
@@ -40,7 +45,7 @@ export default function ContactSection() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-[#DAA520] transition"
-          aria-label="github profile"
+          aria-label="open in new tab: github profile"
         >
           <FaGithub size={30} />
         </a>

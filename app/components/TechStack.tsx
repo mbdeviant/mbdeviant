@@ -18,7 +18,11 @@ const Category = ({
     viewport={{ once: false, amount: 0.6 }}
     className="flex flex-col items-center w-full md:w-1/3"
   >
-    <h3 className="text-4xl  font-medium mb-6 text-center text-[#DAA520] tracking-wide">
+    <h3
+      id="tech-stack-heading"
+      tabIndex={-1}
+      className="text-4xl  font-medium mb-6 text-center text-[#DAA520] tracking-wide"
+    >
       {title}
     </h3>
     <div className="grid grid-cols-3 gap-6 justify-items-center">
@@ -40,6 +44,8 @@ const Category = ({
 export default function TechStackSection() {
   return (
     <section
+      id="tech-stack"
+      tabIndex={-1}
       className="relative w-full cursor-default px-6 py-24 z-2 text-white bg-transparent"
       aria-label="tech stack section"
     >

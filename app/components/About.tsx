@@ -4,6 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
+      tabIndex={-1}
       aria-label="about section"
       className="relative w-full flex flex-col z-2 cursor-default lg:flex-row items-center justify-center text-center lg:text-left px-8 py-20 gap-12 bg-transparent text-white"
     >
@@ -15,7 +16,11 @@ export default function About() {
       </div>
 
       <div className="w-full lg:w-1/2 max-w-2xl">
-        <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#DAA520] to-[#FFD700] bg-clip-text text-transparent">
+        <h2
+          id="about-heading"
+          tabIndex={-1}
+          className=" text-5xl font-bold mb-4 bg-gradient-to-r from-[#DAA520] to-[#FFD700] bg-clip-text text-transparent"
+        >
           About
         </h2>
         <p className="text-xl text-gray-300 mb-6">
