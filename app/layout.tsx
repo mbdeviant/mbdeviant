@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import BackgroundCanvas from "./components/BackgroundCanvas";
-import SkipLinks from "./components/SkipLinks";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -72,7 +71,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${spaceGrotesk.variable} antialiased`}>
         <BackgroundCanvas />
-        <SkipLinks />
         {children}
       </body>
     </html>
