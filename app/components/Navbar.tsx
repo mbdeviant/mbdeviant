@@ -20,6 +20,7 @@ export default function Navbar() {
               <Link
                 to={id}
                 smooth={true}
+                role="button"
                 duration={500}
                 className={`transition-colors duration-200 ${
                   active === id
