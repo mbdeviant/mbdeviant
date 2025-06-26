@@ -11,7 +11,6 @@ export default function BackgroundCanvas() {
 
   useEffect(() => {
     if (!mountRef.current) return;
-    console.log("BACKGROUND MOUNTED");
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color("#000");
@@ -187,7 +186,6 @@ export default function BackgroundCanvas() {
 
       renderer.forceContextLoss();
       renderer.dispose();
-      console.log("BACKGROUND UNMOUNTED");
     };
   }, []);
 

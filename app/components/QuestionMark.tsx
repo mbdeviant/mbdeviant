@@ -19,7 +19,6 @@ const SpinningModel = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log("CUBE MOUNTED");
     const mount = mountRef.current;
     if (!mount) return;
 
@@ -67,7 +66,6 @@ const SpinningModel = () => {
     };
     controls.addEventListener("start", handleStart);
     controls.addEventListener("end", handleEnd);
-
 
     const resizeRenderer = () => {
       const width = mount.clientWidth;
@@ -167,8 +165,6 @@ const SpinningModel = () => {
       controlsRef.current = null;
       modelRef.current = null;
       mountRef.current = null;
-
-      console.log("CUBE UNMOUNTED");
     };
   }, []);
 
